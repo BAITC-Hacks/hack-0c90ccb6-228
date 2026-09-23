@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Ведущие осенью",
+    "description": "Плотная категория: прошли больше трёх, работает ранжирование.",
+    "query": {
+      "city": "Алматы",
+      "category": "Ведущий",
+      "event_format": "корпоратив",
+      "budget": 1500000,
+      "event_date": "2026-09-23"
+    },
+    "expected_status": "SUCCESS"
+  },
+  {
+    "label": "Другая дата",
+    "description": "Те же условия, другой день: состав подборки меняется из-за занятости.",
+    "query": {
+      "city": "Алматы",
+      "category": "Ведущий",
+      "event_format": "корпоратив",
+      "budget": 1500000,
+      "event_date": "2026-09-24"
+    },
+    "expected_status": "SUCCESS"
+  },
+  {
+    "label": "Редкая категория",
+    "description": "Флористы: неполная выдача с объяснением причин.",
+    "query": {
+      "city": "Алматы",
+      "category": "Флорист",
+      "event_format": "свадьба",
+      "budget": 500000,
+      "event_date": "2026-09-23"
+    },
+    "expected_status": "SUCCESS"
+  },
+  {
+    "label": "Нет совпадений",
+    "description": "Профили есть, но не проходят условия: показываем аудит.",
+    "query": {
+      "city": "Алматы",
+      "category": "Банкетный зал",
+      "event_format": "корпоратив",
+      "budget": 100000000,
+      "event_date": "2026-12-06"
+    },
+    "expected_status": "NO_CANDIDATES_MATCHED"
+  },
+  {
+    "label": "Нет категории",
+    "description": "В выбранном городе категория отсутствует.",
+    "query": {
+      "city": "Астана",
+      "category": "Декоратор",
+      "event_date": "2026-10-03",
+      "event_format": "корпоратив",
+      "budget": 1000000
+    },
+    "expected_status": "CITY_CATEGORY_NOT_FOUND"
+  }
+]
